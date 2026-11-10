@@ -1,115 +1,208 @@
-// ==========================================
+// ============================================
 // SATDEPTANI - TPTP 1B POLIWANGI
-// ==========================================
+// ============================================
 
-// GANTI DATA JADWAL DI BAGIAN INI
+// DATA JADWAL KULIAH
 const schedules = [
-  { day: "Senin", time: "07.30–09.10", course: "Mata Kuliah Contoh 1", lecturer: "Nama Dosen", room: "Ruang A" },
-  { day: "Senin", time: "09.10–10.50", course: "Mata Kuliah Contoh 2", lecturer: "Nama Dosen", room: "Ruang B" },
-  { day: "Selasa", time: "07.30–09.10", course: "Mata Kuliah Contoh 3", lecturer: "Nama Dosen", room: "Ruang A" },
-  { day: "Rabu", time: "09.10–10.50", course: "Mata Kuliah Contoh 4", lecturer: "Nama Dosen", room: "Laboratorium" },
-  { day: "Kamis", time: "07.30–09.10", course: "Mata Kuliah Contoh 5", lecturer: "Nama Dosen", room: "Ruang C" },
-  { day: "Jumat", time: "07.30–09.10", course: "Mata Kuliah Contoh 6", lecturer: "Nama Dosen", room: "Ruang A" }
-];
-
-const lecturers = [
   {
-    name: "Aldy Bahaduri Indraloka, S.Si., M.P.",
-    field: "Produksi Tanaman"
+    day: "Senin",
+    time: "07.30–08.20",
+    course: "Pemrograman Komputer dan Aplikasi (Teori) - TPTP11004",
+    lecturer: "Erlin Susilowati, S.P., M.Biotek.",
+    room: "Lab SIMA 1"
   },
   {
-    name: "Abdul Holik, S.TP., M.Sc.",
-    field: "Teknik Pertanian"
+    day: "Senin",
+    time: "08.20–10.00",
+    course: "Pemrograman Komputer dan Aplikasi (Praktikum) - TPTP11004",
+    lecturer: "Erlin Susilowati, S.P., M.Biotek.",
+    room: "Lab SIMA 1"
   },
   {
-    name: "Ari Istanti, S.P., M.P.",
-    field: "Agronomi · Pertanian Organik"
+    day: "Senin",
+    time: "12.30–15.00",
+    course: "Bahasa Indonesia - PW11102",
+    lecturer: "Eka Nurmala Sari, M.P.",
+    room: "G6.08"
   },
   {
-    name: "Moh Hasbi Ash Shidiqi, S.Tr.P., M.P.",
-    field: "Agronomi · Teknologi Pertanian"
+    day: "Selasa",
+    time: "07.30–09.10",
+    course: "Kewarganegaraan",
+    lecturer: "Dr. Widhi Harsono",
+    room: "B4.05"
   },
   {
-    name: "Eka Nurmala Sari, S.P., M.P.",
-    field: "Agronomi · Perlindungan Tanaman"
+    day: "Selasa",
+    time: "14.10–15.50",
+    course: "Bahasa Inggris (Teori) - TPTP31001",
+    lecturer: "Moh Hasbi Ash Shidiqi, S.Tr.P., M.P.",
+    room: "G2.06"
   },
   {
-    name: "Erlin Susilowati, S.P., M.Biotek.",
-    field: "Bioteknologi Tanaman"
+    day: "Rabu",
+    time: "08.20–10.00",
+    course: "Dasar-Dasar Agronomi (Teori) - TPTP11002",
+    lecturer: "Mokhtar Effendi, S.P., M.P.",
+    room: "G6.07"
   },
   {
-    name: "Mohammad Ali Mudhor, S.P., M.P.",
-    field: "Agronomi"
+    day: "Rabu",
+    time: "10.00–11.40",
+    course: "Pendidikan Agama Islam",
+    lecturer: "Imam Mashuri",
+    room: "G1.07A"
   },
   {
-    name: "Mokhtar Effendi, S.P., M.P.",
-    field: "Agronomi · Hortikultura · Klimatologi"
+    day: "Rabu",
+    time: "12.30–14.10",
+    course: "Dasar-Dasar Agronomi (Praktikum) - TPTP11002",
+    lecturer: "Mokhtar Effendi, S.P., M.P.",
+    room: "Lab Produksi dan Lingkungan"
   },
   {
-    name: "Hendra Andiananta Pradana, S.TP., M.Si.",
-    field: "Teknik Pertanian · Pertanian Berkelanjutan"
+    day: "Kamis",
+    time: "07.30–09.10",
+    course: "Dasar-Dasar Ilmu Tanah (Teori) - TPTP11003",
+    lecturer: "Ari Istanti, S.P., M.P.",
+    room: "G4.08"
+  },
+  {
+    day: "Kamis",
+    time: "09.10–10.50",
+    course: "Dasar-Dasar Ilmu Tanah (Praktikum) - TPTP11003",
+    lecturer: "Ari Istanti, S.P., M.P.",
+    room: "Lab Produksi dan Lingkungan"
+  },
+  {
+    day: "Kamis",
+    time: "13.20–14.10",
+    course: "Botani (Teori) - TPTP11001",
+    lecturer: "Eka Nurmala Sari, S.P., M.P.",
+    room: "G4.08"
+  },
+  {
+    day: "Kamis",
+    time: "14.10–15.00",
+    course: "Botani (Praktikum) - TPTP11001",
+    lecturer: "Eka Nurmala Sari, S.P., M.P.",
+    room: "Lab B"
+  },
+  {
+    day: "Jumat",
+    time: "08.20–10.00",
+    course: "Pancasila",
+    lecturer: "Ninik Sri Rahayu",
+    room: "G2.01"
   }
 ];
 
-// ==========================================
+// DATA DOSEN
+const lecturers = [
+  {
+    name: "Erlin Susilowati, S.P., M.Biotek.",
+    field: "Pemrograman Komputer dan Aplikasi"
+  },
+  {
+    name: "Eka Nurmala Sari, S.P., M.P.",
+    field: "Bahasa Indonesia dan Botani"
+  },
+  {
+    name: "Dr. Widhi Harsono",
+    field: "Kewarganegaraan"
+  },
+  {
+    name: "Moh Hasbi Ash Shidiqi, S.Tr.P., M.P.",
+    field: "Bahasa Inggris"
+  },
+  {
+    name: "Mokhtar Effendi, S.P., M.P.",
+    field: "Dasar-Dasar Agronomi"
+  },
+  {
+    name: "Imam Mashuri",
+    field: "Pendidikan Agama Islam"
+  },
+  {
+    name: "Ari Istanti, S.P., M.P.",
+    field: "Dasar-Dasar Ilmu Tanah"
+  },
+  {
+    name: "Ninik Sri Rahayu",
+    field: "Pancasila"
+  }
+];
+
+// ============================================
 // PENYIMPANAN DATA
-// ==========================================
+// ============================================
 
-let tasks = JSON.parse(localStorage.getItem("satde tani_tasks") || "[]");
-let notes = JSON.parse(localStorage.getItem("satde tani_notes") || "[]");
+function loadData(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key)) || [];
+  } catch {
+    return [];
+  }
+}
 
-// Fungsi penyimpanan
+let tasks = loadData("satdeptani_tasks");
+let notes = loadData("satdeptani_notes");
+
 function saveTasks() {
-  localStorage.setItem("satde tani_tasks", JSON.stringify(tasks));
+  localStorage.setItem(
+    "satdeptani_tasks",
+    JSON.stringify(tasks)
+  );
 }
 
 function saveNotes() {
-  localStorage.setItem("satde tani_notes", JSON.stringify(notes));
+  localStorage.setItem(
+    "satdeptani_notes",
+    JSON.stringify(notes)
+  );
 }
 
-// ==========================================
+// ============================================
 // TANGGAL DAN WAKTU
-// ==========================================
-
-const now = new Date();
+// ============================================
 
 const dayNames = [
-  "Minggu", "Senin", "Selasa",
-  "Rabu", "Kamis", "Jumat", "Sabtu"
+  "Minggu",
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+  "Sabtu"
 ];
 
-const todayName = dayNames[now.getDay()];
+const today = new Date();
+const todayName = dayNames[today.getDay()];
 
 document.getElementById("todayText").textContent =
-  now.toLocaleDateString("id-ID", {
+  today.toLocaleDateString("id-ID", {
     weekday: "long",
     day: "numeric",
     month: "long",
     year: "numeric"
   });
 
-document.getElementById("dateLarge").textContent =
-  now.getDate();
-
-document.getElementById("monthYear").textContent =
-  now.toLocaleDateString("id-ID", {
-    month: "long",
-    year: "numeric"
-  });
-
 document.getElementById("year").textContent =
-  now.getFullYear();
+  today.getFullYear();
 
-// ==========================================
-// NAVIGASI MENU
-// ==========================================
+// ============================================
+// NAVIGASI
+// ============================================
 
 const navLinks = document.querySelectorAll(".nav-link");
 const pages = document.querySelectorAll(".page");
 
 function showPage(pageId) {
   pages.forEach(page => {
-    page.classList.toggle("active", page.id === pageId);
+    page.classList.toggle(
+      "active",
+      page.id === pageId
+    );
   });
 
   navLinks.forEach(link => {
@@ -125,68 +218,67 @@ function showPage(pageId) {
     top: 0,
     behavior: "smooth"
   });
+
+  history.replaceState(null, "", "#" + pageId);
 }
 
 navLinks.forEach(link => {
-  link.addEventListener("click", function(event) {
+  link.addEventListener("click", event => {
     event.preventDefault();
-    const pageId = this.dataset.page;
-
-    showPage(pageId);
-    history.replaceState(null, "", "#" + pageId);
+    showPage(link.dataset.page);
   });
 });
 
-// Link internal di seluruh website
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function(event) {
-    const pageId = this.getAttribute("href").substring(1);
-
-    if (document.getElementById(pageId)) {
-      event.preventDefault();
-      showPage(pageId);
-
-      navLinks.forEach(nav => {
-        nav.classList.toggle(
-          "active",
-          nav.dataset.page === pageId
-        );
-      });
-
-      history.replaceState(null, "", "#" + pageId);
-    }
+// Tombol menuju halaman tertentu
+document.querySelectorAll("[data-go]").forEach(button => {
+  button.addEventListener("click", () => {
+    showPage(button.dataset.go);
   });
 });
 
 // Menu HP
-document.getElementById("menuToggle").addEventListener("click", () => {
-  document.getElementById("sidebar").classList.toggle("open");
-});
+document.getElementById("menuToggle")
+  .addEventListener("click", () => {
+    document.getElementById("sidebar")
+      .classList.toggle("open");
+  });
 
-// Buka halaman berdasarkan URL
+// Membuka halaman berdasarkan alamat URL
 const initialPage = location.hash.replace("#", "");
 
 if (document.getElementById(initialPage)) {
   showPage(initialPage);
 }
 
-// ==========================================
+// ============================================
 // JADWAL KULIAH
-// ==========================================
+// ============================================
 
-const scheduleTable = document.getElementById("scheduleTable");
-const todaySchedule = document.getElementById("todaySchedule");
+const scheduleTable =
+  document.getElementById("scheduleTable");
+
+const todaySchedule =
+  document.getElementById("todaySchedule");
+
+const dayOrder = [
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+  "Sabtu"
+];
 
 function renderSchedule() {
-  const order = [
-    "Senin", "Selasa", "Rabu",
-    "Kamis", "Jumat", "Sabtu"
-  ];
-
   scheduleTable.innerHTML = "";
 
   const sorted = [...schedules].sort((a, b) => {
-    return order.indexOf(a.day) - order.indexOf(b.day);
+    const dayDifference =
+      dayOrder.indexOf(a.day) - dayOrder.indexOf(b.day);
+
+    if (dayDifference !== 0) return dayDifference;
+
+    return a.time.localeCompare(b.time);
   });
 
   sorted.forEach(item => {
@@ -207,55 +299,234 @@ function renderSchedule() {
     scheduleTable.appendChild(row);
   });
 
-  const today = schedules.filter(item => item.day === todayName);
+  document.getElementById("courseTotal").textContent =
+    new Set(schedules.map(item => item.course)).size;
+
+  renderTodaySchedule();
+}
+
+function renderTodaySchedule() {
+  const todayItems = schedules.filter(
+    item => item.day === todayName
+  );
 
   todaySchedule.innerHTML = "";
 
-  if (today.length === 0) {
+  if (todayItems.length === 0) {
     todaySchedule.innerHTML = `
       <div class="empty-state">
-        Tidak ada jadwal yang dimasukkan untuk hari ini.
+        Tidak ada jadwal kuliah yang tercatat hari ini.
       </div>
     `;
-  } else {
-    today.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "schedule-item";
-
-      const time = document.createElement("div");
-      time.className = "schedule-time";
-      time.textContent = item.time;
-
-      const info = document.createElement("div");
-
-      const title = document.createElement("strong");
-      title.textContent = item.course;
-
-      const detail = document.createElement("small");
-      detail.textContent =
-        item.lecturer + " · " + item.room;
-
-      info.append(title, detail);
-      div.append(time, info);
-      todaySchedule.appendChild(div);
-    });
+    return;
   }
 
-  document.getElementById("courseTotal").textContent =
-    new Set(schedules.map(item => item.course)).size;
+  todayItems.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "task-item";
+
+    const info = document.createElement("div");
+    info.className = "task-info";
+
+    const title = document.createElement("strong");
+    title.textContent = item.course;
+
+    const detail = document.createElement("small");
+    detail.textContent =
+      item.time + " · " + item.room;
+
+    const lecturer = document.createElement("small");
+    lecturer.textContent = item.lecturer;
+
+    info.append(title, detail, lecturer);
+    div.appendChild(info);
+    todaySchedule.appendChild(div);
+  });
 }
 
-renderSchedule();
+// ============================================
+// FORMAT TANGGAL DAN STATUS DEADLINE
+// ============================================
 
-// ==========================================
-// SISTEM TUGAS
-// ==========================================
+function formatDate(dateString) {
+  if (!dateString) return "-";
+
+  const date = new Date(dateString + "T00:00:00");
+
+  if (isNaN(date.getTime())) return dateString;
+
+  return date.toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+}
+
+function getDeadlineStatus(deadline, done) {
+  if (done) return "Selesai";
+
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+
+  const due = new Date(deadline + "T00:00:00");
+  const difference = Math.ceil(
+    (due - now) / (1000 * 60 * 60 * 24)
+  );
+
+  if (difference < 0) return "Terlambat";
+  if (difference === 0) return "Deadline hari ini";
+  if (difference === 1) return "Deadline besok";
+
+  return `${difference} hari lagi`;
+}
+
+// ============================================
+// MEMBUAT ELEMEN TUGAS
+// ============================================
+
+function createTaskElement(task) {
+  const item = document.createElement("div");
+
+  item.className =
+    "task-item" + (task.done ? " done" : "");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "task-check";
+  checkbox.checked = task.done;
+  checkbox.setAttribute("aria-label", "Tandai tugas selesai");
+
+  checkbox.addEventListener("change", () => {
+    task.done = checkbox.checked;
+    saveTasks();
+    renderAllTasks();
+    updateDashboard();
+    showToast(
+      task.done
+        ? "Tugas ditandai selesai."
+        : "Tugas dikembalikan ke daftar."
+    );
+  });
+
+  const info = document.createElement("div");
+  info.className = "task-info";
+
+  const title = document.createElement("strong");
+  title.textContent = task.name;
+
+  const detail = document.createElement("small");
+  detail.textContent =
+    task.course + " · Deadline: " +
+    formatDate(task.deadline);
+
+  const status = document.createElement("small");
+  status.textContent =
+    getDeadlineStatus(task.deadline, task.done);
+
+  info.append(title, detail, status);
+
+  const priority = document.createElement("span");
+  priority.className = "priority " + task.priority;
+  priority.textContent = task.priority;
+
+  const remove = document.createElement("button");
+  remove.className = "delete-button";
+  remove.textContent = "Hapus";
+
+  remove.addEventListener("click", () => {
+    if (!confirm("Yakin ingin menghapus tugas ini?")) {
+      return;
+    }
+
+    tasks = tasks.filter(t => t.id !== task.id);
+
+    saveTasks();
+    renderAllTasks();
+    updateDashboard();
+    showToast("Tugas berhasil dihapus.");
+  });
+
+  item.append(checkbox, info, priority, remove);
+
+  return item;
+}
+
+// ============================================
+// PENGINGAT DI BAWAH JADWAL
+// ============================================
+
+const quickTaskForm =
+  document.getElementById("quickTaskForm");
+
+quickTaskForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const task = {
+    id: Date.now(),
+    name: document.getElementById("quickTaskName").value.trim(),
+    course: document.getElementById("quickTaskCourse").value.trim(),
+    deadline: document.getElementById("quickTaskDeadline").value,
+    priority: document.getElementById("quickTaskPriority").value,
+    description: "",
+    done: false
+  };
+
+  if (!task.name || !task.course || !task.deadline) {
+    showToast("Lengkapi data pengingat terlebih dahulu.");
+    return;
+  }
+
+  tasks.push(task);
+  saveTasks();
+
+  quickTaskForm.reset();
+
+  renderAllTasks();
+  updateDashboard();
+
+  showToast("Pengingat tugas berhasil ditambahkan!");
+});
+
+// ============================================
+// MANAJEMEN TUGAS
+// ============================================
 
 const taskForm = document.getElementById("taskForm");
 const taskList = document.getElementById("taskList");
 const taskFilter = document.getElementById("taskFilter");
 
-function renderTasks() {
+taskForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const task = {
+    id: Date.now(),
+    name: document.getElementById("taskName").value.trim(),
+    course: document.getElementById("taskCourse").value.trim(),
+    deadline: document.getElementById("taskDeadline").value,
+    priority: document.getElementById("taskPriority").value,
+    description: document.getElementById("taskDescription").value.trim(),
+    done: false
+  };
+
+  if (!task.name || !task.course || !task.deadline) {
+    showToast("Mohon lengkapi data tugas.");
+    return;
+  }
+
+  tasks.push(task);
+  saveTasks();
+
+  taskForm.reset();
+
+  renderAllTasks();
+  updateDashboard();
+
+  showToast("Tugas baru berhasil disimpan!");
+});
+
+taskFilter.addEventListener("change", renderAllTasks);
+
+function renderAllTasks() {
   const filter = taskFilter.value;
 
   const filtered = tasks.filter(task => {
@@ -272,68 +543,35 @@ function renderTasks() {
         Belum ada tugas pada kategori ini.
       </div>
     `;
+  } else {
+    filtered
+      .sort((a, b) => a.deadline.localeCompare(b.deadline))
+      .forEach(task => {
+        taskList.appendChild(createTaskElement(task));
+      });
   }
 
-  filtered.forEach(task => {
-    const item = document.createElement("div");
+  // Tugas yang muncul di bawah jadwal
+  const scheduleTaskList =
+    document.getElementById("scheduleTaskList");
 
-    item.className = "task-item" + (task.done ? " done" : "");
+  scheduleTaskList.innerHTML = "";
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.className = "task-check";
-    checkbox.checked = task.done;
+  const pending = tasks
+    .filter(task => !task.done)
+    .sort((a, b) => a.deadline.localeCompare(b.deadline));
 
-    checkbox.addEventListener("change", () => {
-      task.done = checkbox.checked;
-      saveTasks();
-      renderTasks();
-      updateDashboard();
+  if (pending.length === 0) {
+    scheduleTaskList.innerHTML = `
+      <div class="empty-state">
+        Belum ada pengingat tugas. Kamu bisa menambahkan tugas di atas.
+      </div>
+    `;
+  } else {
+    pending.forEach(task => {
+      scheduleTaskList.appendChild(createTaskElement(task));
     });
-
-    const info = document.createElement("div");
-    info.className = "task-info";
-
-    const title = document.createElement("strong");
-    title.textContent = task.name;
-
-    const detail = document.createElement("small");
-    detail.textContent =
-      task.course + " · Deadline: " +
-      formatDate(task.deadline);
-
-    const description = document.createElement("small");
-    description.textContent = task.description || "";
-
-    info.append(title, detail, description);
-
-    const priority = document.createElement("span");
-    priority.className = "priority " + task.priority;
-    priority.textContent = task.priority;
-
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "delete-button";
-    deleteButton.textContent = "Hapus";
-
-    deleteButton.addEventListener("click", () => {
-      if (confirm("Yakin ingin menghapus tugas ini?")) {
-        tasks = tasks.filter(t => t.id !== task.id);
-        saveTasks();
-        renderTasks();
-        updateDashboard();
-        showToast("Tugas berhasil dihapus.");
-      }
-    });
-
-    item.append(
-      checkbox,
-      info,
-      priority,
-      deleteButton
-    );
-
-    taskList.appendChild(item);
-  });
+  }
 
   document.getElementById("allTasks").textContent =
     tasks.length;
@@ -344,52 +582,25 @@ function renderTasks() {
   document.getElementById("finishedTasks").textContent =
     tasks.filter(task => task.done).length;
 
-  document.getElementById("pendingTotal").textContent =
-    tasks.filter(task => !task.done).length;
+  document.getElementById("reminderPending").textContent =
+    pending.length;
 
-  document.getElementById("taskCount").textContent =
-    tasks.filter(task => !task.done).length;
+  document.getElementById("reminderDone").textContent =
+    tasks.filter(task => task.done).length;
+
+  document.getElementById("taskBadge").textContent =
+    pending.length;
 }
 
-taskForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const task = {
-    id: Date.now(),
-    name: document.getElementById("taskName").value.trim(),
-    course: document.getElementById("taskCourse").value.trim(),
-    deadline: document.getElementById("taskDeadline").value,
-    priority: document.getElementById("taskPriority").value,
-    description: document.getElementById("taskDescription").value.trim(),
-    done: false
-  };
-
-  if (!task.name || !task.course || !task.deadline) {
-    showToast("Lengkapi data tugas terlebih dahulu.");
-    return;
-  }
-
-  tasks.push(task);
-  saveTasks();
-
-  taskForm.reset();
-  renderTasks();
-  updateDashboard();
-
-  showToast("Tugas berhasil disimpan!");
-});
-
-taskFilter.addEventListener("change", renderTasks);
-
-// ==========================================
-// SISTEM CATATAN
-// ==========================================
+// ============================================
+// CATATAN KULIAH
+// ============================================
 
 const noteForm = document.getElementById("noteForm");
 const noteList = document.getElementById("noteList");
 const noteSearch = document.getElementById("noteSearch");
 
-noteForm.addEventListener("submit", function(event) {
+noteForm.addEventListener("submit", event => {
   event.preventDefault();
 
   const note = {
@@ -401,7 +612,7 @@ noteForm.addEventListener("submit", function(event) {
   };
 
   if (!note.title || !note.content) {
-    showToast("Judul dan isi catatan wajib diisi.");
+    showToast("Judul dan isi catatan harus diisi.");
     return;
   }
 
@@ -409,14 +620,17 @@ noteForm.addEventListener("submit", function(event) {
   saveNotes();
 
   noteForm.reset();
+
   renderNotes();
   updateDashboard();
 
   showToast("Catatan berhasil disimpan!");
 });
 
+noteSearch.addEventListener("input", renderNotes);
+
 function renderNotes() {
-  const keyword = noteSearch.value.toLowerCase();
+  const keyword = noteSearch.value.toLowerCase().trim();
 
   const filtered = notes.filter(note => {
     return (
@@ -431,7 +645,7 @@ function renderNotes() {
   if (filtered.length === 0) {
     noteList.innerHTML = `
       <div class="empty-state">
-        Belum ada catatan yang ditemukan.
+        Tidak ada catatan yang ditemukan.
       </div>
     `;
   }
@@ -454,38 +668,47 @@ function renderNotes() {
     meta.className = "note-meta";
 
     const date = document.createElement("small");
-    date.textContent = formatDate(note.date.slice(0, 10));
+    date.textContent = formatNoteDate(note.date);
 
     const remove = document.createElement("button");
     remove.className = "delete-button";
     remove.textContent = "Hapus";
 
     remove.addEventListener("click", () => {
-      if (confirm("Hapus catatan ini?")) {
-        notes = notes.filter(n => n.id !== note.id);
-        saveNotes();
-        renderNotes();
-        updateDashboard();
-        showToast("Catatan berhasil dihapus.");
-      }
+      if (!confirm("Hapus catatan ini?")) return;
+
+      notes = notes.filter(n => n.id !== note.id);
+
+      saveNotes();
+      renderNotes();
+      updateDashboard();
+
+      showToast("Catatan dihapus.");
     });
 
     meta.append(date, remove);
     card.append(category, title, content, meta);
+
     noteList.appendChild(card);
   });
-
-  document.getElementById("noteTotal").textContent =
-    notes.length;
 }
 
-noteSearch.addEventListener("input", renderNotes);
+function formatNoteDate(value) {
+  const date = new Date(value);
 
-// ==========================================
-// DIREKTORI DOSEN
-// ==========================================
+  return date.toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+}
 
-const lecturerGrid = document.getElementById("lecturerGrid");
+// ============================================
+// DOSEN DAN GOOGLE SCHOLAR
+// ============================================
+
+const lecturerGrid =
+  document.getElementById("lecturerGrid");
 
 function renderLecturers() {
   lecturerGrid.innerHTML = "";
@@ -497,13 +720,12 @@ function renderLecturers() {
     const avatar = document.createElement("div");
     avatar.className = "lecturer-avatar";
 
-    const initials = lecturer.name
+    avatar.textContent = lecturer.name
       .split(" ")
+      .filter(Boolean)
       .slice(0, 2)
       .map(word => word[0])
       .join("");
-
-    avatar.textContent = initials;
 
     const name = document.createElement("h3");
     name.textContent = lecturer.name;
@@ -511,80 +733,54 @@ function renderLecturers() {
     const field = document.createElement("p");
     field.textContent = lecturer.field;
 
-    const scholar = document.createElement("a");
-    scholar.className = "scholar-link";
-    scholar.target = "_blank";
-    scholar.rel = "noopener";
-    scholar.textContent = "Cari di Google Scholar ↗";
+    const link = document.createElement("a");
+    link.className = "scholar-link";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Cari di Google Scholar ↗";
 
-    scholar.href =
+    link.href =
       "https://scholar.google.com/scholar?q=" +
       encodeURIComponent(lecturer.name);
 
-    card.append(avatar, name, field, scholar);
+    card.append(avatar, name, field, link);
+
     lecturerGrid.appendChild(card);
   });
-
-  document.getElementById("lecturerTotal").textContent =
-    lecturers.length;
 }
 
-renderLecturers();
-
-// ==========================================
+// ============================================
 // MODE GELAP
-// ==========================================
+// ============================================
 
-const themeToggle = document.getElementById("themeToggle");
+const themeToggle =
+  document.getElementById("themeToggle");
 
-if (localStorage.getItem("satde tani_theme") === "dark") {
-  document.body.classList.add("dark");
-  themeToggle.textContent = "☀ Ganti Tampilan";
-}
+function applyTheme() {
+  const dark =
+    localStorage.getItem("satdeptani_theme") === "dark";
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  const dark = document.body.classList.contains("dark");
-
-  localStorage.setItem(
-    "satde tani_theme",
-    dark ? "dark" : "light"
-  );
+  document.body.classList.toggle("dark", dark);
 
   themeToggle.textContent = dark
     ? "☀ Ganti Tampilan"
     : "☾ Ganti Tampilan";
+}
+
+themeToggle.addEventListener("click", () => {
+  const dark = !document.body.classList.contains("dark");
+
+  localStorage.setItem(
+    "satdeptani_theme",
+    dark ? "dark" : "light"
+  );
+
+  applyTheme();
 });
 
-// ==========================================
-// FUNGSI PENDUKUNG
-// ==========================================
-
-function formatDate(dateString) {
-  if (!dateString) return "-";
-
-  const date = new Date(dateString + "T00:00:00");
-
-  if (isNaN(date.getTime())) return dateString;
-
-  return date.toLocaleDateString("id-ID", {
-    day: "numeric",
-    month: "short",
-    year: "numeric"
-  });
-}
-
-function showToast(message) {
-  const toast = document.getElementById("toast");
-
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2500);
-}
+// ============================================
+// DASHBOARD
+// ============================================
 
 function updateDashboard() {
   document.getElementById("pendingTotal").textContent =
@@ -593,14 +789,55 @@ function updateDashboard() {
   document.getElementById("noteTotal").textContent =
     notes.length;
 
-  document.getElementById("taskCount").textContent =
-    tasks.filter(task => !task.done).length;
+  const dashboardTasks =
+    document.getElementById("dashboardTasks");
+
+  dashboardTasks.innerHTML = "";
+
+  const upcoming = tasks
+    .filter(task => !task.done)
+    .sort((a, b) => a.deadline.localeCompare(b.deadline))
+    .slice(0, 4);
+
+  if (upcoming.length === 0) {
+    dashboardTasks.innerHTML = `
+      <div class="empty-state">
+        Tidak ada tugas yang menunggu. Tetap semangat!
+      </div>
+    `;
+  } else {
+    upcoming.forEach(task => {
+      dashboardTasks.appendChild(createTaskElement(task));
+    });
+  }
 }
 
-// ==========================================
-// JALANKAN SEMUA FITUR
-// ==========================================
+// ============================================
+// NOTIFIKASI DALAM WEBSITE
+// ============================================
 
-renderTasks();
+let toastTimer;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2600);
+}
+
+// ============================================
+// JALANKAN SEMUA FITUR
+// ============================================
+
+renderSchedule();
+renderAllTasks();
 renderNotes();
+renderLecturers();
 updateDashboard();
+applyTheme();
