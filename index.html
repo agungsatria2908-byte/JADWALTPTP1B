@@ -3,413 +3,454 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#173f2b">
+  <meta name="theme-color" content="#174331">
+  <meta name="description" content="SatDepTani - Website akademik mahasiswa TPTP 1B Poliwangi">
   <title>SatDepTani | TPTP 1B Poliwangi</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="layout">
 
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-logo">
-          <img src="https://pmb.poliwangi.ac.id/pmbtheme/img/poliwangi.png"
-               alt="Logo Poliwangi"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-          <span class="logo-fallback">P</span>
-        </div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img
+        src="https://pmb.poliwangi.ac.id/pmbtheme/img/poliwangi.png"
+        alt="Logo Poliwangi"
+        onerror="this.style.display='none'"
+      >
+      <div>
+        <h2>SatDepTani</h2>
+        <span>TPTP 1B · POLIWANGI</span>
+      </div>
+    </div>
+
+    <div class="menu-label">MENU UTAMA</div>
+    <nav class="navigation">
+      <a href="#beranda" class="nav-link active" data-page="beranda">⌂ <span>Beranda</span></a>
+      <a href="#jadwal" class="nav-link" data-page="jadwal">▦ <span>Jadwal Kuliah</span></a>
+      <a href="#tugas" class="nav-link" data-page="tugas">✓ <span>Tugas & Deadline</span><b id="taskBadge">0</b></a>
+      <a href="#catatan" class="nav-link" data-page="catatan">▤ <span>Catatan Kuliah</span></a>
+      <a href="#dosen" class="nav-link" data-page="dosen">♙ <span>Dosen Pengampu</span></a>
+    </nav>
+
+    <div class="menu-label">MENGENAL TPTP</div>
+    <nav class="navigation">
+      <a href="#filosofi" class="nav-link" data-page="filosofi">❀ <span>Filosofi Pertanian</span></a>
+      <a href="#sejarah" class="nav-link" data-page="sejarah">⌛ <span>Sejarah Poliwangi</span></a>
+      <a href="#karier" class="nav-link" data-page="karier">↗ <span>Prospek Karier</span></a>
+      <a href="#galeri" class="nav-link" data-page="galeri">▧ <span>Galeri Kegiatan</span></a>
+      <a href="#tentang" class="nav-link" data-page="tentang">◎ <span>Tentang Website</span></a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button id="themeToggle" class="theme-toggle">☾ Ganti Tampilan</button>
+      <p>Belajar, bertumbuh, dan berkontribusi.</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuToggle" aria-label="Buka menu">☰</button>
+      <div class="breadcrumb">Poliwangi <span>/</span> TPTP 1B</div>
+      <div class="today-indicator">
+        <span class="status-dot"></span>
+        <span id="todayText"></span>
+      </div>
+    </header>
+
+    <!-- BERANDA -->
+    <section class="page active" id="beranda">
+      <div class="page-heading">
+        <span class="eyebrow">DASHBOARD AKADEMIK</span>
+        <h1>Selamat Datang di SatDepTani</h1>
+        <p>Ruang digital akademik mahasiswa Teknologi Produksi Tanaman 1B.</p>
+      </div>
+
+      <div class="welcome-card">
         <div>
-          <h2>SatDepTani</h2>
-          <small>TPTP 1B · POLIWANGI</small>
+          <span class="welcome-tag">TPTP 1B · POLIWANGI</span>
+          <h2>Belajar hari ini,<br>bertumbuh untuk masa depan.</h2>
+          <p>Kelola jadwal kuliah, tugas, dan catatan akademik dalam satu tempat.</p>
+          <button class="primary-button" data-go="jadwal">Lihat Jadwal Kuliah →</button>
         </div>
+        <div class="welcome-decoration">🌱</div>
       </div>
 
-      <div class="side-label">MENU UTAMA</div>
-      <nav class="navigation">
-        <a href="#beranda" class="nav-link active" data-page="beranda">
-          <span>⌂</span> Beranda
-        </a>
-        <a href="#jadwal" class="nav-link" data-page="jadwal">
-          <span>▦</span> Jadwal Kuliah
-        </a>
-        <a href="#tugas" class="nav-link" data-page="tugas">
-          <span>✓</span> Tugas & Deadline
-          <span class="nav-count" id="taskCount">0</span>
-        </a>
-        <a href="#catatan" class="nav-link" data-page="catatan">
-          <span>▤</span> Catatan Kuliah
-        </a>
-        <a href="#dosen" class="nav-link" data-page="dosen">
-          <span>♙</span> Dosen Pengampu
-        </a>
-      </nav>
-
-      <div class="side-label">MENGENAL TPTP</div>
-      <nav class="navigation">
-        <a href="#filosofi" class="nav-link" data-page="filosofi">
-          <span>❀</span> Filosofi Pertanian
-        </a>
-        <a href="#sejarah" class="nav-link" data-page="sejarah">
-          <span>⌛</span> Sejarah Poliwangi
-        </a>
-        <a href="#prospek" class="nav-link" data-page="prospek">
-          <span>↗</span> Prospek Karier
-        </a>
-        <a href="#galeri" class="nav-link" data-page="galeri">
-          <span>▧</span> Galeri Kegiatan
-        </a>
-        <a href="#tentang" class="nav-link" data-page="tentang">
-          <span>◎</span> Tentang Website
-        </a>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <div class="side-profile">
-          <div class="profile-avatar">T1</div>
-          <div>
-            <strong>TPTP 1B</strong>
-            <small>Mahasiswa Poliwangi</small>
-          </div>
-        </div>
-        <button class="theme-button" id="themeToggle">☾ Ganti Tampilan</button>
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon">▦</span>
+          <p>Total Mata Kuliah</p>
+          <strong id="courseTotal">0</strong>
+          <small>Dalam jadwal mingguan</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">✓</span>
+          <p>Tugas Belum Selesai</p>
+          <strong id="pendingTotal">0</strong>
+          <small>Perlu kamu kerjakan</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">▤</span>
+          <p>Catatan Tersimpan</p>
+          <strong id="noteTotal">0</strong>
+          <small>Catatan perkuliahan</small>
+        </article>
       </div>
-    </aside>
 
-    <main class="main-content">
-      <header class="topbar">
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <div class="breadcrumb">Poliwangi <span>/</span> TPTP 1B</div>
-        <div class="topbar-right">
-          <span class="live-dot"></span>
-          <span id="todayText">Memuat tanggal...</span>
-        </div>
-      </header>
-
-      <!-- BERANDA -->
-      <section class="page active" id="beranda">
-        <div class="hero">
-          <div class="hero-content">
-            <span class="eyebrow">DIGITAL CLASSROOM · TPTP 1B</span>
-            <h1>Belajar hari ini,<br><em>menumbuhkan masa depan.</em></h1>
-            <p>
-              Ruang digital mahasiswa Teknologi Produksi Tanaman Pangan.
-              Satu tempat untuk mengelola perkuliahan, tugas, catatan,
-              dan perjalanan akademik.
-            </p>
-            <a href="#jadwal" class="primary-button">Lihat Jadwal Kuliah ↗</a>
-          </div>
-          <div class="hero-art">
-            <div class="sun"></div>
-            <div class="plant plant-one">🌾</div>
-            <div class="plant plant-two">🌱</div>
-            <div class="hero-caption">GROW WITH PURPOSE</div>
-          </div>
-        </div>
-
-        <div class="welcome-row">
-          <div>
-            <p class="section-kicker">DASHBOARD MAHASISWA</p>
-            <h2>Halo, TPTP 1B! 👋</h2>
-            <p class="muted">Semangat menjalani proses belajar dan bertumbuh.</p>
-          </div>
-          <div class="date-card">
-            <span>HARI INI</span>
-            <strong id="dateLarge">--</strong>
-            <small id="monthYear">--</small>
-          </div>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon green">▦</div>
-            <div><span>Total Mata Kuliah</span><strong id="courseTotal">0</strong></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon orange">✓</div>
-            <div><span>Tugas Belum Selesai</span><strong id="pendingTotal">0</strong></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon blue">▤</div>
-            <div><span>Catatan Tersimpan</span><strong id="noteTotal">0</strong></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon purple">♙</div>
-            <div><span>Dosen TPTP</span><strong id="lecturerTotal">9</strong></div>
-          </div>
-        </div>
-
-        <div class="content-grid">
-          <div class="panel">
-            <div class="panel-heading">
-              <div>
-                <p class="section-kicker">AKADEMIK</p>
-                <h3>Agenda Perkuliahan Hari Ini</h3>
-              </div>
-              <a href="#jadwal" class="text-link">Lihat semua →</a>
-            </div>
-            <div id="todaySchedule" class="schedule-list"></div>
-          </div>
-
-          <div class="panel quote-panel">
-            <span class="quote-mark">“</span>
-            <p class="section-kicker">INSPIRASI PERTANIAN</p>
-            <h3>Menanam bukan sekadar menunggu panen, tetapi merawat harapan.</h3>
-            <p class="muted">Setiap proses kecil hari ini dapat menghasilkan perubahan besar di masa depan.</p>
-            <div class="quote-line"></div>
-            <strong>THE FUTURE IS GROWING</strong>
-          </div>
-        </div>
-
-        <div class="panel quick-panel">
+      <div class="content-grid">
+        <article class="panel">
           <div class="panel-heading">
             <div>
-              <p class="section-kicker">AKSES CEPAT</p>
-              <h3>Kelola aktivitas kuliahmu</h3>
+              <span class="eyebrow">AGENDA HARI INI</span>
+              <h2>Jadwal Perkuliahan</h2>
             </div>
+            <button class="text-button" data-go="jadwal">Lihat semua →</button>
           </div>
-          <div class="quick-grid">
-            <a href="#tugas" class="quick-item"><span>✓</span><b>Tambah Tugas</b><small>Catat deadline tugas</small></a>
-            <a href="#catatan" class="quick-item"><span>✎</span><b>Buat Catatan</b><small>Simpan materi kuliah</small></a>
-            <a href="#jadwal" class="quick-item"><span>▦</span><b>Jadwal Kuliah</b><small>Lihat agenda mingguan</small></a>
-            <a href="#prospek" class="quick-item"><span>↗</span><b>Eksplorasi Karier</b><small>Kenali peluang kerja</small></a>
+          <div id="todaySchedule" class="today-schedule"></div>
+        </article>
+
+        <article class="panel quote-panel">
+          <span class="eyebrow">INSPIRASI PERTANIAN</span>
+          <div class="quote-icon">❝</div>
+          <h2>Menanam pengetahuan, memanen masa depan.</h2>
+          <p>Pertanian bukan hanya tentang menghasilkan pangan, tetapi juga menjaga kehidupan dan keberlanjutan lingkungan.</p>
+        </article>
+      </div>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">PENGINGAT</span>
+            <h2>Tugas yang Mendekati Deadline</h2>
           </div>
+          <button class="text-button" data-go="tugas">Kelola tugas →</button>
         </div>
-      </section>
+        <div id="dashboardTasks" class="task-preview"></div>
+      </article>
+    </section>
 
-      <!-- JADWAL -->
-      <section class="page" id="jadwal">
-        <div class="page-heading">
-          <p class="section-kicker">AKADEMIK TPTP 1B</p>
-          <h1>Jadwal Perkuliahan</h1>
-          <p class="muted">Pantau agenda kuliah dalam satu tampilan.</p>
-        </div>
-        <div class="panel">
-          <div class="panel-heading">
-            <div><h3>Jadwal Mingguan</h3><small class="muted">Data dapat diubah melalui script.js</small></div>
-            <span class="pill">TPTP 1B</span>
+    <!-- JADWAL -->
+    <section class="page" id="jadwal">
+      <div class="page-heading">
+        <span class="eyebrow">AKADEMIK TPTP 1B</span>
+        <h1>Jadwal Perkuliahan</h1>
+        <p>Pantau agenda kuliah dan pengingat tugas dalam satu tampilan.</p>
+      </div>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Jadwal Mingguan</h2>
+            <p>Jadwal kelas TPTP 1B berdasarkan data yang kamu kirim.</p>
           </div>
-          <div class="table-wrap">
-            <table class="schedule-table">
-              <thead>
-                <tr><th>Hari</th><th>Waktu</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruang</th></tr>
-              </thead>
-              <tbody id="scheduleTable"></tbody>
-            </table>
-          </div>
-          <div class="notice">
-            <strong>ⓘ Informasi:</strong> Jadwal awal merupakan contoh.
-            Sesuaikan dengan jadwal resmi kelas TPTP 1B.
-          </div>
-        </div>
-      </section>
-
-      <!-- TUGAS -->
-      <section class="page" id="tugas">
-        <div class="page-heading">
-          <p class="section-kicker">TASK MANAGEMENT</p>
-          <h1>Tugas & Deadline</h1>
-          <p class="muted">Catat tugas, atur tenggat waktu, dan pantau progres.</p>
+          <span class="pill">TPTP 1B</span>
         </div>
 
-        <div class="stats-grid compact-stats">
-          <div class="stat-card"><div><span>Total Tugas</span><strong id="allTasks">0</strong></div></div>
-          <div class="stat-card"><div><span>Belum Selesai</span><strong id="unfinishedTasks">0</strong></div></div>
-          <div class="stat-card"><div><span>Selesai</span><strong id="finishedTasks">0</strong></div></div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-heading"><h3>Tambah Tugas Baru</h3></div>
-          <form id="taskForm" class="form-grid">
-            <label>Nama tugas
-              <input id="taskName" type="text" placeholder="Contoh: Laporan praktikum" required>
-            </label>
-            <label>Mata kuliah
-              <input id="taskCourse" type="text" placeholder="Nama mata kuliah" required>
-            </label>
-            <label>Deadline
-              <input id="taskDeadline" type="date" required>
-            </label>
-            <label>Prioritas
-              <select id="taskPriority">
-                <option value="Normal">Normal</option>
-                <option value="Penting">Penting</option>
-                <option value="Mendesak">Mendesak</option>
-              </select>
-            </label>
-            <label class="full-width">Keterangan
-              <textarea id="taskDescription" rows="2" placeholder="Detail tugas (opsional)"></textarea>
-            </label>
-            <button class="primary-button" type="submit">+ Simpan Tugas</button>
-          </form>
-        </div>
-
-        <div class="panel">
-          <div class="panel-heading">
-            <h3>Daftar Tugas</h3>
-            <select id="taskFilter" class="small-select">
-              <option value="all">Semua tugas</option>
-              <option value="pending">Belum selesai</option>
-              <option value="done">Selesai</option>
-            </select>
-          </div>
-          <div id="taskList" class="task-list"></div>
-        </div>
-      </section>
-
-      <!-- CATATAN -->
-      <section class="page" id="catatan">
-        <div class="page-heading">
-          <p class="section-kicker">PERSONAL KNOWLEDGE</p>
-          <h1>Catatan Kuliah</h1>
-          <p class="muted">Simpan rangkuman, ide, dan materi penting perkuliahan.</p>
-        </div>
-        <div class="panel">
-          <div class="panel-heading"><h3>Buat Catatan Baru</h3></div>
-          <form id="noteForm" class="form-grid">
-            <label>Judul catatan
-              <input id="noteTitle" type="text" placeholder="Judul catatan" required>
-            </label>
-            <label>Mata kuliah / kategori
-              <input id="noteCategory" type="text" placeholder="Contoh: Dasar Ilmu Tanah">
-            </label>
-            <label class="full-width">Isi catatan
-              <textarea id="noteContent" rows="5" placeholder="Tulis materi atau catatanmu di sini..." required></textarea>
-            </label>
-            <button class="primary-button" type="submit">+ Simpan Catatan</button>
-          </form>
-        </div>
-        <div class="panel">
-          <div class="panel-heading"><h3>Arsip Catatan</h3><input id="noteSearch" class="search-input" type="search" placeholder="Cari catatan..."></div>
-          <div id="noteList" class="notes-grid"></div>
-        </div>
-      </section>
-
-      <!-- DOSEN -->
-      <section class="page" id="dosen">
-        <div class="page-heading">
-          <p class="section-kicker">ACADEMIC DIRECTORY</p>
-          <h1>Dosen Pengampu TPTP</h1>
-          <p class="muted">Direktori dosen Program Studi Teknologi Produksi Tanaman Pangan.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Waktu</th>
+                <th>Mata Kuliah</th>
+                <th>Dosen</th>
+                <th>Ruang</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTable"></tbody>
+          </table>
         </div>
         <div class="notice">
-          Foto dosen tidak dipasang apabila sumber foto resmi belum tersedia.
-          Gunakan tautan Google Scholar untuk melihat profil dan publikasi akademik.
+          <strong>ⓘ Informasi:</strong> Jadwal ditampilkan sesuai data yang terlihat pada screenshot. Periksa kembali jika ada perubahan dari kampus.
         </div>
-        <div class="lecturer-grid" id="lecturerGrid"></div>
-        <p class="muted tiny">Daftar nama mengacu pada halaman dosen resmi prodi. Penugasan dosen untuk mata kuliah tertentu dapat berbeda.</p>
-      </section>
+      </article>
 
-      <!-- FILOSOFI -->
-      <section class="page" id="filosofi">
-        <div class="page-heading">
-          <p class="section-kicker">IDENTITAS KEILMUAN</p>
-          <h1>Filosofi Pertanian</h1>
-          <p class="muted">Memahami makna di balik ilmu produksi tanaman pangan.</p>
-        </div>
-        <div class="philosophy-hero">
+      <!-- PENGINGAT TUGAS TEPAT DI BAWAH JADWAL -->
+      <article class="panel reminder-panel">
+        <div class="panel-heading">
           <div>
-            <span class="eyebrow">TPTP · POLIWANGI</span>
-            <h2>Tanah adalah awal kehidupan, ilmu adalah jalan kemajuan.</h2>
-            <p>Pertanian bukan hanya tentang menghasilkan panen, tetapi juga menjaga keberlanjutan sumber daya dan kehidupan generasi mendatang.</p>
+            <span class="eyebrow">JANGAN SAMPAI TERLEWAT</span>
+            <h2>Catatan & Pengingat Tugas</h2>
+            <p>Tambahkan tugas kuliah beserta mata kuliah dan deadline-nya.</p>
           </div>
-          <div class="philosophy-symbol">🌱</div>
+          <span class="reminder-icon">🔔</span>
         </div>
-        <div class="content-grid three-grid">
-          <div class="panel philosophy-card"><span>01</span><h3>Presisi</h3><p>Memanfaatkan ilmu pengetahuan dan teknologi agar proses produksi tanaman lebih tepat, efektif, dan efisien.</p></div>
-          <div class="panel philosophy-card"><span>02</span><h3>Keberlanjutan</h3><p>Menjaga keseimbangan lingkungan, tanah, air, dan keanekaragaman hayati untuk masa depan.</p></div>
-          <div class="panel philosophy-card"><span>03</span><h3>Agrotechnopreneur</h3><p>Mengembangkan jiwa wirausaha berbasis teknologi pertanian dan potensi kearifan lokal.</p></div>
-        </div>
-        <div class="panel">
-          <p class="section-kicker">FILOSOFI MAHASISWA TPTP</p>
-          <h3>Belajar dari alam, berkarya untuk kehidupan.</h3>
-          <p class="muted">Benih mengajarkan kesabaran. Tanah mengajarkan keteguhan. Panen mengajarkan bahwa hasil yang baik lahir dari proses, pengetahuan, dan kepedulian.</p>
-        </div>
-      </section>
 
-      <!-- SEJARAH -->
-      <section class="page" id="sejarah">
-        <div class="page-heading">
-          <p class="section-kicker">OUR INSTITUTION</p>
-          <h1>Sejarah Poliwangi</h1>
-          <p class="muted">Mengenal perjalanan Politeknik Negeri Banyuwangi.</p>
-        </div>
-        <div class="history-banner">
-          <span class="eyebrow">POLITEKNIK NEGERI BANYUWANGI</span>
-          <h2>Tumbuh bersama daerah, bergerak menuju masa depan.</h2>
-          <p>Poliwangi hadir sebagai institusi pendidikan vokasi yang berperan dalam pengembangan sumber daya manusia dan potensi daerah.</p>
-          <a href="https://poliwangi.ac.id/sejarah-singkat/" target="_blank" rel="noopener">Baca sejarah resmi Poliwangi ↗</a>
-        </div>
-        <div class="panel timeline">
-          <div class="timeline-item"><span>2003–2004</span><div><h3>Gagasan pendirian</h3><p>Persiapan pendirian politeknik dimulai melalui kajian Pemerintah Kabupaten Banyuwangi.</p></div></div>
-          <div class="timeline-item"><span>2006–2007</span><div><h3>Tim perintis</h3><p>Pemerintah daerah membentuk tim perintis dan melanjutkan proses persiapan pendirian politeknik.</p></div></div>
-          <div class="timeline-item"><span>2008</span><div><h3>Politeknik mulai beroperasi</h3><p>Politeknik daerah mulai dikembangkan dengan jurusan-jurusan awal.</p></div></div>
-          <div class="timeline-item"><span>2013</span><div><h3>Menjadi perguruan tinggi negeri</h3><p>Politeknik Negeri Banyuwangi resmi berstatus sebagai perguruan tinggi negeri.</p></div></div>
-          <div class="timeline-item"><span>2023</span><div><h3>Pengembangan bidang pertanian</h3><p>Program studi TPTP termasuk dalam pengembangan program studi Sarjana Terapan di Poliwangi.</p></div></div>
-        </div>
-      </section>
+        <form id="quickTaskForm" class="quick-task-form">
+          <div class="form-field">
+            <label for="quickTaskName">Nama tugas</label>
+            <input id="quickTaskName" type="text" placeholder="Contoh: Makalah Dasar Agronomi" required>
+          </div>
+          <div class="form-field">
+            <label for="quickTaskCourse">Mata kuliah</label>
+            <input id="quickTaskCourse" type="text" placeholder="Nama mata kuliah" required>
+          </div>
+          <div class="form-field">
+            <label for="quickTaskDeadline">Deadline</label>
+            <input id="quickTaskDeadline" type="date" required>
+          </div>
+          <div class="form-field">
+            <label for="quickTaskPriority">Prioritas</label>
+            <select id="quickTaskPriority">
+              <option value="Normal">Normal</option>
+              <option value="Penting">Penting</option>
+              <option value="Mendesak">Mendesak</option>
+            </select>
+          </div>
+          <button type="submit" class="primary-button">＋ Simpan Pengingat</button>
+        </form>
 
-      <!-- PROSPEK -->
-      <section class="page" id="prospek">
-        <div class="page-heading">
-          <p class="section-kicker">CAREER OPPORTUNITIES</p>
-          <h1>Prospek Karier TPTP</h1>
-          <p class="muted">Ilmu tanaman pangan membuka peluang di sektor pertanian, industri, riset, dan kewirausahaan.</p>
+        <div class="reminder-summary">
+          <span><b id="reminderPending">0</b> tugas belum selesai</span>
+          <span><b id="reminderDone">0</b> selesai</span>
         </div>
-        <div class="career-grid">
-          <article class="career-card"><span>🌾</span><h3>Supervisor Produksi Tanaman Pangan</h3><p>Mengawasi proses produksi tanaman pangan dan penerapan sistem budidaya.</p></article>
-          <article class="career-card"><span>🌱</span><h3>Asisten Manajer Tanaman Pangan</h3><p>Mendukung pengelolaan produksi, perbenihan, dan perlindungan tanaman.</p></article>
-          <article class="career-card"><span>🚜</span><h3>Agrotechnopreneur</h3><p>Membangun usaha pertanian, agribisnis, atau produk berbasis hasil pertanian.</p></article>
-          <article class="career-card"><span>🔬</span><h3>Peneliti Pertanian</h3><p>Terlibat dalam penelitian benih, genetika, budidaya, dan teknologi tanaman.</p></article>
-          <article class="career-card"><span>🏢</span><h3>Staf Instansi Pertanian</h3><p>Berkontribusi pada lembaga pemerintah maupun sektor swasta bidang pertanian.</p></article>
-          <article class="career-card"><span>🌍</span><h3>Konsultan dan Pendamping Petani</h3><p>Mendampingi penerapan praktik budidaya yang efektif dan berkelanjutan.</p></article>
-        </div>
-        <div class="notice">Prospek di atas merupakan gambaran bidang pekerjaan yang relevan, bukan jaminan penempatan kerja atau persyaratan rekrutmen tertentu.</div>
-      </section>
+        <div id="scheduleTaskList" class="task-list"></div>
+      </article>
+    </section>
 
-      <!-- GALERI -->
-      <section class="page" id="galeri">
-        <div class="page-heading">
-          <p class="section-kicker">CAMPUS LIFE</p>
-          <h1>Galeri Kegiatan</h1>
-          <p class="muted">Dokumentasikan proses belajar dan aktivitas mahasiswa.</p>
+    <!-- TUGAS -->
+    <section class="page" id="tugas">
+      <div class="page-heading">
+        <span class="eyebrow">MANAJEMEN AKADEMIK</span>
+        <h1>Tugas & Deadline</h1>
+        <p>Atur pekerjaan kuliah agar lebih terencana dan tidak tertinggal.</p>
+      </div>
+
+      <div class="stats-grid compact-stats">
+        <article class="stat-card"><p>Semua Tugas</p><strong id="allTasks">0</strong></article>
+        <article class="stat-card"><p>Belum Selesai</p><strong id="unfinishedTasks">0</strong></article>
+        <article class="stat-card"><p>Sudah Selesai</p><strong id="finishedTasks">0</strong></article>
+      </div>
+
+      <article class="panel">
+        <h2>Tambah Tugas Baru</h2>
+        <form id="taskForm" class="form-grid">
+          <div class="form-field">
+            <label for="taskName">Nama tugas</label>
+            <input id="taskName" type="text" placeholder="Masukkan nama tugas" required>
+          </div>
+          <div class="form-field">
+            <label for="taskCourse">Mata kuliah</label>
+            <input id="taskCourse" type="text" placeholder="Nama mata kuliah" required>
+          </div>
+          <div class="form-field">
+            <label for="taskDeadline">Deadline</label>
+            <input id="taskDeadline" type="date" required>
+          </div>
+          <div class="form-field">
+            <label for="taskPriority">Prioritas</label>
+            <select id="taskPriority">
+              <option value="Normal">Normal</option>
+              <option value="Penting">Penting</option>
+              <option value="Mendesak">Mendesak</option>
+            </select>
+          </div>
+          <div class="form-field full-width">
+            <label for="taskDescription">Keterangan</label>
+            <textarea id="taskDescription" rows="3" placeholder="Detail tugas, instruksi dosen, atau hal yang perlu diingat"></textarea>
+          </div>
+          <button class="primary-button" type="submit">＋ Tambahkan Tugas</button>
+        </form>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <h2>Daftar Tugas</h2>
+          <select id="taskFilter" class="small-select">
+            <option value="all">Semua</option>
+            <option value="pending">Belum selesai</option>
+            <option value="done">Selesai</option>
+          </select>
         </div>
+        <div id="taskList" class="task-list"></div>
+      </article>
+    </section>
+
+    <!-- CATATAN -->
+    <section class="page" id="catatan">
+      <div class="page-heading">
+        <span class="eyebrow">RUANG BELAJAR</span>
+        <h1>Catatan Kuliah</h1>
+        <p>Simpan rangkuman materi, informasi praktikum, dan hal penting dari dosen.</p>
+      </div>
+
+      <article class="panel">
+        <h2>Buat Catatan Baru</h2>
+        <form id="noteForm" class="form-grid">
+          <div class="form-field">
+            <label for="noteTitle">Judul catatan</label>
+            <input id="noteTitle" type="text" placeholder="Judul catatan" required>
+          </div>
+          <div class="form-field">
+            <label for="noteCategory">Kategori / Mata kuliah</label>
+            <input id="noteCategory" type="text" placeholder="Contoh: Botani">
+          </div>
+          <div class="form-field full-width">
+            <label for="noteContent">Isi catatan</label>
+            <textarea id="noteContent" rows="5" placeholder="Tuliskan materi atau hal penting..." required></textarea>
+          </div>
+          <button type="submit" class="primary-button">＋ Simpan Catatan</button>
+        </form>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <h2>Catatan Tersimpan</h2>
+          <input id="noteSearch" class="search-input" type="search" placeholder="Cari catatan...">
+        </div>
+        <div id="noteList" class="notes-grid"></div>
+      </article>
+    </section>
+
+    <!-- DOSEN -->
+    <section class="page" id="dosen">
+      <div class="page-heading">
+        <span class="eyebrow">TENAGA PENGAJAR</span>
+        <h1>Dosen Pengampu</h1>
+        <p>Daftar dosen yang tercantum dalam jadwal perkuliahan TPTP 1B.</p>
+      </div>
+      <div id="lecturerGrid" class="lecturer-grid"></div>
+      <div class="notice">Foto dosen tidak ditampilkan apabila belum ditemukan profil yang dapat dipastikan sesuai. Gunakan tautan Google Scholar untuk menelusuri profil dan publikasi.</div>
+    </section>
+
+    <!-- FILOSOFI -->
+    <section class="page" id="filosofi">
+      <div class="page-heading">
+        <span class="eyebrow">IDENTITAS KEILMUAN</span>
+        <h1>Filosofi Pertanian</h1>
+        <p>Memahami pertanian sebagai ilmu, kehidupan, dan tanggung jawab terhadap masa depan.</p>
+      </div>
+
+      <div class="feature-banner">
+        <div>
+          <span class="eyebrow">TUMBUH · MERAWAT · MEMBERI MANFAAT</span>
+          <h2>Pertanian adalah fondasi kehidupan.</h2>
+          <p>Dari tanah, air, benih, dan pengetahuan, manusia membangun keberlanjutan pangan dan lingkungan.</p>
+        </div>
+        <span class="feature-emoji">🌾</span>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <h2>Makna Pertanian</h2>
+          <p>Pertanian bukan sekadar aktivitas bercocok tanam. Pertanian merupakan proses mengelola sumber daya alam secara bijaksana untuk menghasilkan pangan, memenuhi kebutuhan manusia, dan menjaga keseimbangan ekosistem.</p>
+        </article>
+        <article class="panel">
+          <h2>Makna Teknologi Produksi Tanaman</h2>
+          <p>Teknologi Produksi Tanaman memadukan ilmu budidaya, teknologi, pengelolaan lahan, dan inovasi untuk menghasilkan tanaman yang berkualitas serta produktif.</p>
+        </article>
+        <article class="panel">
+          <h2>Nilai yang Dipegang</h2>
+          <ul class="value-list">
+            <li>🌱 Keberlanjutan lingkungan</li>
+            <li>🌾 Ketahanan dan kemandirian pangan</li>
+            <li>🔬 Ilmu pengetahuan dan inovasi</li>
+            <li>🤝 Kolaborasi dan pengabdian</li>
+            <li>🌍 Tanggung jawab terhadap alam</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>Filosofi Poliwangi</h2>
+          <p>Politeknik Negeri Banyuwangi hadir sebagai pendidikan vokasi yang mengembangkan kompetensi terapan, keterampilan, dan karakter agar lulusannya mampu menjawab kebutuhan masyarakat serta dunia kerja.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEJARAH -->
+    <section class="page" id="sejarah">
+      <div class="page-heading">
+        <span class="eyebrow">MENGENAL KAMPUS</span>
+        <h1>Sejarah Poliwangi</h1>
+        <p>Mengenal perjalanan Politeknik Negeri Banyuwangi.</p>
+      </div>
+      <article class="panel history-panel">
+        <div class="history-mark">POLIWANGI</div>
+        <h2>Politeknik Negeri Banyuwangi</h2>
+        <p>Politeknik Negeri Banyuwangi merupakan perguruan tinggi negeri vokasi yang berada di Kabupaten Banyuwangi, Jawa Timur. Poliwangi mengembangkan pendidikan berbasis keterampilan terapan, penelitian, dan pengabdian kepada masyarakat.</p>
+        <div class="history-line">
+          <div class="history-item">
+            <span class="history-dot"></span>
+            <div><strong>2007</strong><p>Awal pendirian Politeknik Banyuwangi sebagai institusi pendidikan vokasi.</p></div>
+          </div>
+          <div class="history-item">
+            <span class="history-dot"></span>
+            <div><strong>2013</strong><p>Perubahan status menjadi perguruan tinggi negeri berdasarkan peraturan pemerintah.</p></div>
+          </div>
+          <div class="history-item">
+            <span class="history-dot"></span>
+            <div><strong>Sekarang</strong><p>Terus mengembangkan pendidikan vokasi, inovasi, dan kerja sama untuk mendukung pembangunan daerah.</p></div>
+          </div>
+        </div>
+        <a class="external-link" href="https://www.poliwangi.ac.id/" target="_blank" rel="noopener">Kunjungi website resmi Poliwangi ↗</a>
+      </article>
+    </section>
+
+    <!-- KARIER -->
+    <section class="page" id="karier">
+      <div class="page-heading">
+        <span class="eyebrow">MASA DEPAN LULUSAN</span>
+        <h1>Prospek Karier</h1>
+        <p>Peluang karier di bidang produksi tanaman, agribisnis, dan teknologi pertanian.</p>
+      </div>
+
+      <div class="career-grid">
+        <article class="career-card"><span>🌱</span><h3>Praktisi Budidaya Tanaman</h3><p>Mengelola kegiatan produksi tanaman dari persiapan lahan hingga panen.</p></article>
+        <article class="career-card"><span>🔬</span><h3>Asisten Peneliti</h3><p>Mendukung penelitian di bidang tanaman, benih, tanah, dan teknologi pertanian.</p></article>
+        <article class="career-card"><span>🚜</span><h3>Teknisi Pertanian</h3><p>Mengoperasikan dan mengelola teknologi serta peralatan produksi pertanian.</p></article>
+        <article class="career-card"><span>🌾</span><h3>Wirausaha Agribisnis</h3><p>Membangun usaha di bidang budidaya, benih, hasil pertanian, atau jasa pertanian.</p></article>
+        <article class="career-card"><span>🧪</span><h3>Quality Control</h3><p>Memastikan kualitas hasil produksi dan proses penanganan produk pertanian.</p></article>
+        <article class="career-card"><span>🌍</span><h3>Pendamping Pertanian</h3><p>Mendukung petani dan masyarakat dalam penerapan praktik pertanian yang baik.</p></article>
+        <article class="career-card"><span>📦</span><h3>Staf Agribisnis</h3><p>Bekerja dalam pengelolaan produksi, distribusi, pemasaran, dan rantai pasok pertanian.</p></article>
+        <article class="career-card"><span>💡</span><h3>Pengembang Inovasi</h3><p>Mengembangkan solusi teknologi dan metode produksi tanaman yang lebih efisien.</p></article>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section class="page" id="galeri">
+      <div class="page-heading">
+        <span class="eyebrow">DOKUMENTASI</span>
+        <h1>Galeri Kegiatan</h1>
+        <p>Ruang untuk menyimpan dokumentasi praktikum, kegiatan kampus, dan kebersamaan kelas.</p>
+      </div>
+      <article class="panel">
+        <h2>Galeri TPTP 1B</h2>
+        <p class="muted">Tambahkan foto kegiatan kelas pada bagian ini dengan mengganti gambar contoh di HTML.</p>
         <div class="gallery-grid">
-          <div class="gallery-card gallery-a"><span>🌱</span><h3>Praktikum Tanaman</h3><p>Belajar langsung dari proses budidaya.</p></div>
-          <div class="gallery-card gallery-b"><span>🧪</span><h3>Laboratorium</h3><p>Mengenal penelitian dan pengujian.</p></div>
-          <div class="gallery-card gallery-c"><span>🌾</span><h3>Observasi Lapangan</h3><p>Mengamati pertanian secara langsung.</p></div>
-          <div class="gallery-card gallery-d"><span>🤝</span><h3>Kolaborasi</h3><p>Bertumbuh bersama teman dan masyarakat.</p></div>
+          <div class="gallery-placeholder">🌱<span>Praktikum Tanaman</span></div>
+          <div class="gallery-placeholder">🧑‍🌾<span>Kegiatan Lapangan</span></div>
+          <div class="gallery-placeholder">🌾<span>Budidaya Tanaman</span></div>
+          <div class="gallery-placeholder">🤝<span>Kebersamaan Kelas</span></div>
         </div>
-        <p class="muted tiny">Bagian ini dapat dikembangkan dengan foto kegiatan asli kelas TPTP 1B.</p>
-      </section>
+      </article>
+    </section>
 
-      <!-- TENTANG -->
-      <section class="page" id="tentang">
-        <div class="about-card">
-          <div class="about-logo">ST</div>
-          <p class="eyebrow">DIGITAL CLASSROOM PROJECT</p>
-          <h1>SatDepTani</h1>
-          <h3>Teknologi Produksi Tanaman Pangan · Kelas 1B</h3>
-          <p>Website ini dibuat sebagai ruang informasi dan pengelolaan aktivitas akademik mahasiswa TPTP 1B Politeknik Negeri Banyuwangi.</p>
-          <div class="about-divider"></div>
-          <p class="muted">Dibuat dengan semangat belajar, teknologi, dan pertanian berkelanjutan.</p>
-          <strong class="creator">DESIGNED & DEVELOPED BY<br><span>SATDEPTANI</span></strong>
-          <small>CLASS TPTP 1B · POLIWANGI</small>
+    <!-- TENTANG -->
+    <section class="page" id="tentang">
+      <div class="page-heading">
+        <span class="eyebrow">TENTANG PLATFORM</span>
+        <h1>SatDepTani</h1>
+        <p>Ruang digital sederhana untuk mendukung aktivitas akademik TPTP 1B.</p>
+      </div>
+      <article class="panel about-panel">
+        <div class="about-logo">🌿</div>
+        <h2>SatDepTani</h2>
+        <p>SatDepTani merupakan website informasi dan pengelolaan akademik yang dibuat untuk membantu mahasiswa TPTP 1B Poliwangi dalam memantau jadwal perkuliahan, mengingat tugas, menyimpan catatan, dan mengenal bidang keilmuannya.</p>
+        <div class="about-details">
+          <div><span>Program Studi</span><strong>Teknologi Produksi Tanaman</strong></div>
+          <div><span>Kelas</span><strong>TPTP 1B</strong></div>
+          <div><span>Institusi</span><strong>Politeknik Negeri Banyuwangi</strong></div>
+          <div><span>Pembuat</span><strong>SatDepTani</strong></div>
         </div>
-      </section>
+      </article>
+    </section>
 
-      <footer class="footer">
-        <div><strong>SatDepTani</strong><span> · TPTP 1B Poliwangi</span></div>
-        <p>Designed & Developed by <b>SatDepTani</b></p>
-        <small>© <span id="year"></span> · Digital Classroom</small>
-      </footer>
-    </main>
-  </div>
+    <footer class="footer">
+      <span>SatDepTani · TPTP 1B Poliwangi</span>
+      <span>Designed & Developed by <strong>SatDepTani</strong></span>
+      <span>© <span id="year"></span> · Digital Classroom</span>
+    </footer>
+  </main>
 
-  <div id="toast" class="toast"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
-  </html>
+</html>
